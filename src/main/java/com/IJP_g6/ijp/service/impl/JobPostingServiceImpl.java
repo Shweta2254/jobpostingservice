@@ -74,5 +74,19 @@ public class JobPostingServiceImpl implements IJobPostingService {
         return isUpdated;
     }
 
+    public boolean deleteJobPosting(int jobId) {
+        boolean isDeleted = false;
+
+        JobPosting jobPosting = jobPostingRepository.findById(jobId).orElseThrow(
+                () -> new ResourceNotFoundException("jobPosting", "jobId",jobId)
+        );
+
+        if (jobPosting != null) {
+            jobPostingRepository.deleteByJobId(jobPosting.getJobId());
+            isDeleted = true;
+        }
+        return isDeleted;
+    }
+
 
 }

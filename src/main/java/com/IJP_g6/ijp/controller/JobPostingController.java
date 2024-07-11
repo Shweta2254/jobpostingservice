@@ -57,6 +57,17 @@ public class JobPostingController {
 
     }
 
+    @DeleteMapping("/delete")
+    public ResponseEntity<ResponseDTO> deleteJob(@RequestParam int jobId) {
+
+        boolean isDeleted = iJobPostingService.deleteJobPosting(jobId);
+        if (isDeleted) {
+            return ResponseEntity.status(HttpStatus.OK).body(new ResponseDTO("204", "Deleted successfully"));
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ResponseDTO("500", "Internal Server Error"));
+        }
+    }
+
     @GetMapping("/hello")
     public ResponseEntity<String> helloWorld() {
         return ResponseEntity.status(HttpStatus.OK).body("Hello World");

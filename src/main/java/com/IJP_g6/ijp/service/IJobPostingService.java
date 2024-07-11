@@ -14,8 +14,5 @@ public interface IJobPostingService {
     boolean updateJobPosting( int JobId, JobPostingDTO jobPostingDTO);
 
     List<JobPostingDTO> fetchAllJobPosting();
-//
-//    boolean deleteAccount(String mobileNumber);
-//
-//    List<CustomerDto> fetchAllCustomers();
+    boolean deleteJobPosting(int jobId);
 }
