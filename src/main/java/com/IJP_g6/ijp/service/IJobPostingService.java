@@ -3,12 +3,17 @@ package com.IJP_g6.ijp.service;
 import com.IJP_g6.ijp.dto.JobPostingDTO;
 import com.IJP_g6.ijp.entity.JobPosting;
 
+import java.util.List;
+
 public interface IJobPostingService {
     void createJob(JobPostingDTO jobPostingDTO);
 
-//    CustomerDto fetchAccountDetails(String mobileNumber);
+     JobPostingDTO fetchJobPostingDetails(int Id);
+
 //
-//    boolean updateAccount(String mobileNumber, CustomerDto customerDto);
+    boolean updateJobPosting( int JobId, JobPostingDTO jobPostingDTO);
+
+    List<JobPostingDTO> fetchAllJobPosting();
 //
 //    boolean deleteAccount(String mobileNumber);
 //

@@ -24,7 +24,7 @@ public class JobPostingMapper {
     }
 
     public static JobPosting mapToJobPosting(JobPostingDTO jobPostingDTO, JobPosting jobPosting){
-        jobPosting.setJobId(jobPostingDTO.getJobId());
+        //jobPosting.setJobId(jobPostingDTO.getJobId());
         jobPosting.setDescription(jobPostingDTO.getDescription());
         jobPosting.setDesignation(jobPostingDTO.getDesignation());
         jobPosting.setLocation(jobPostingDTO.getLocation());
